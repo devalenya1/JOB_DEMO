@@ -1,6 +1,8 @@
 workflows:
   react_build:
     name: React Build Workflow
+    instance_type: mac_mini_m2
+    max_build_duration: 1000
     environment:
       node: 18.0.0 # Specify the Node.js version
     scripts:
@@ -9,5 +11,8 @@ workflows:
     artifacts:
       - build/** # Upload the built files for deployment
     publishing:
+      email:
+        recipients:
+          - sargrace7@gmail.com
       scripts:
         - echo "Build complete. Add deployment scripts here."
