@@ -1,0 +1,13 @@
+workflows:
+  react_build:
+    name: React Build Workflow
+    environment:
+      node: 18.0.0 # Specify the Node.js version
+    scripts:
+      - npm install
+      - npm run build # Build the React app
+    artifacts:
+      - build/** # Upload the built files for deployment
+    publishing:
+      scripts:
+        - echo "Build complete. Add deployment scripts here."
